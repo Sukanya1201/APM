@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: elastic-sc
+  namespace: elk
+provisioner: kubernetes.io/azure-disk
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
+reclaimPolicy: Delete
+parameters:
+  storageaccounttype: Standard_LRS
+  kind: Managed
